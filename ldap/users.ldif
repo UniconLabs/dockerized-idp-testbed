@@ -1,0 +1,31 @@
+dn: cn=admin,dc=idptestbed
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+userPassword: password
+description: LDAP administrator
+
+
+dn: uid=student1,ou=People,dc=idptestbed
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: Stud
+uid: student1
+sn: Ent
+cn: Stud Ent
+mail: student1@idptestbed.edu
+userPassword: password
+
+dn: uid=staff1,ou=People,dc=idptestbed
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: St
+uid: staff1
+sn: aff
+cn: St aff
+mail: staff1@idptestbed.edu
+userPassword: password

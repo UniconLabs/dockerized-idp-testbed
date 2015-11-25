@@ -1,0 +1,26 @@
+#This handles all of the http request to simple cert issues and both the SP and IdP can share the same ports.
+httpd-proxy:
+  build: ./httpd-proxy/
+  links:
+   - idp:idp
+   - sp:sp
+  ports:
+   - "80:80"
+   - "443:443"
+
+idp:
+  build: ./idp/
+  environment:
+   - JETTY_MAX_HEAP=64m
+   - JETTY_BROWSER_SSL_KEYSTORE_PASSWORD=password
+   - JETTY_BACKCHANNEL_SSL_KEYSTORE_PASSWORD=backpassword
+  expose: 
+   - "4443"
+  links:
+   - ldap:ldap   
+ 
+ldap:
+  build: ./ldap/
+
+sp:
+  build: ./sp/ 
