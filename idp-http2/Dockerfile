@@ -18,3 +18,5 @@ RUN yum -y install unzip \
 
 RUN cd /opt/shib-jetty-base \
     && /opt/jre-home/bin/java -jar ../jetty-home/start.jar --add-to-startd=http2 -Dorg.eclipse.jetty.start.ack.licenses=true
+
+ADD shib-jetty-base/alpn.ini /opt/shib-jetty-base/start.d/
