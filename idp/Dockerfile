@@ -6,7 +6,8 @@ COPY shibboleth-idp/ /opt/shibboleth-idp/
 
 
 #Testing JCE code as well (from base image's readme)
-RUN yum -y install unzip \
+RUN yum update \
+    && yum -y install unzip \
     && wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" \
     http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip \
     && echo "f3020a3922efd6626c2fff45695d527f34a8020e938a49292561f18ad1320b59  jce_policy-8.zip" | sha256sum -c - \
