@@ -15,7 +15,7 @@ RUN yum -y install unzip \
     && chmod -R 640 /opt/jre-home/jre/lib/security/ \
     && chown -R root:jetty /opt/jre-home/jre/lib/security/   
 
-
+# Testing Jetty's HTTP/2 support
 RUN cd /opt/shib-jetty-base \
     && /opt/jre-home/bin/java -jar ../jetty-home/start.jar --add-to-startd=http2 -Dorg.eclipse.jetty.start.ack.licenses=true
 
