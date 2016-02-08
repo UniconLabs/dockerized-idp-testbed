@@ -42,6 +42,8 @@
                 <ref bean="SAML2.Logout" />
                 <ref bean="SAML2.AttributeQuery" />
                 <ref bean="SAML2.ArtifactResolution" />
+                <ref bean="CAS.LoginConfiguration" />
+                <ref bean="CAS.ValidateConfiguration" />
             </list>
         </property>
     </bean>
