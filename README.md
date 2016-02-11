@@ -1,5 +1,5 @@
 # dockerized-idp-testbed
-Used to validate the dockerized shibboleth-idp image.
+Used to validate the dockerized shibboleth-idp image (<https://hub.docker.com/r/unicon/shibboleth-idp/>/<https://github.com/Unicon/shibboleth-idp-dockerized>).
 
 More documentation is forthcoming, but it's a full working IDP, SP, and LDAP server that runs under `docker-compose`. 
 
