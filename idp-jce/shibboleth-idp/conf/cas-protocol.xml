@@ -20,11 +20,18 @@
           class="%{idp.cas.serviceRegistryClass:net.shibboleth.idp.cas.service.PatternServiceRegistry}">
         <property name="definitions">
             <list>
+                <!--
                 <bean class="net.shibboleth.idp.cas.service.ServiceDefinition"
-                      c:regex="https://([A-Za-z0-9_-]+\.)*idptestbed(:\d+)?/.*"
+                      c:regex="https://([A-Za-z0-9_-]+\.)*example\.org(:\d+)?/.*"
                       p:group="proxying-services"
                       p:authorizedToProxy="true"
                       p:singleLogoutParticipant="true" />
+                -->
+                <bean class="net.shibboleth.idp.cas.service.ServiceDefinition"
+                      c:regex="https://idptestbed/.*"
+                      p:group="non-proxying-services"
+                      p:authorizedToProxy="false" />
+                
             </list>
         </property>
     </bean>
