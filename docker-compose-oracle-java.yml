@@ -12,7 +12,9 @@ services:
      - "443:443"
 
   idp:
-    build: ./idp-oracle-java/
+    build: 
+      context: ./idp/
+      dockerfile: Dockerfile-oracle-java
     depends_on: 
      - ldap
     environment:

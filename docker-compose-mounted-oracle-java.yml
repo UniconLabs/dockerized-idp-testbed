@@ -12,9 +12,7 @@ services:
      - "443:443"
 
   idp:
-    build: 
-      context: ./idp/
-      dockerfile: Dockerfile-jce
+    build: ./idp/
     depends_on: 
      - ldap
     environment:
@@ -25,6 +23,8 @@ services:
      - "4443"
     networks:
      - back
+    volumes:
+      - /Users/jgasper/Downloads/jdk1.8.0_91:/opt/jre-home/:ro
 
    
   ldap:

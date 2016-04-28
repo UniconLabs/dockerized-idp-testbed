@@ -1,4 +1,4 @@
-FROM unicon/shibboleth-idp:3.2.1
+FROM unicon/shibboleth-idp:latest
 
 MAINTAINER Unicon, Inc.
 
