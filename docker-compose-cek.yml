@@ -1,0 +1,51 @@
+version: "2"
+
+services:
+  #This handles all of the http request to simple cert issues and both the SP and IdP can share the same ports.
+  httpd-proxy:
+    build: ./httpd-proxy/
+    networks:
+     - front
+     - back
+    ports:
+     - "80:80"
+     - "443:443"
+
+  idp:
+    build: 
+      context: ./idp/
+      dockerfile: Dockerfile-cek
+    depends_on: 
+     - ldap
+    environment:
+     - JETTY_MAX_HEAP=64m
+     - JETTY_BROWSER_SSL_KEYSTORE_PASSWORD=password
+     - JETTY_BACKCHANNEL_SSL_KEYSTORE_PASSWORD=password
+    expose: 
+     - "4443"
+    networks:
+     - back
+
+   
+  ldap:
+    build: ./ldap/
+    networks:
+     - back
+
+  sp:
+    build: ./sp/ 
+    networks:
+     - back
+
+  php-cas:
+    build: ./php-cas/
+    links:
+      - httpd-proxy:idptestbed
+    networks:
+     - back
+
+networks:
+  front:
+    driver: bridge
+  back:    
+    driver: bridge
