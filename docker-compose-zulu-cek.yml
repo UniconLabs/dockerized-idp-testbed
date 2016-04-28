@@ -14,7 +14,7 @@ services:
   idp:
     build: 
       context: ./idp/
-      dockerfile: Dockerfile-cek
+      dockerfile: Dockerfile-zulu-cek
     depends_on: 
      - ldap
     environment:

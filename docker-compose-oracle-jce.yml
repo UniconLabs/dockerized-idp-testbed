@@ -14,7 +14,7 @@ services:
   idp:
     build: 
       context: ./idp/
-      dockerfile: Dockerfile-jce
+      dockerfile: Dockerfile-oracle-jce
     depends_on: 
      - ldap
     environment:
