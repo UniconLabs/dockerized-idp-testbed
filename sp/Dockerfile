@@ -7,4 +7,4 @@ COPY etc-shibboleth /etc/shibboleth/
 COPY etc-httpd/ /etc/httpd/
 COPY var-www-html/ /var/www/html/
 
-RUN chmod +x /etc/shibboleth/shibd-redhat /usr/local/bin/httpd-foreground
+RUN chmod +x /etc/shibboleth/shibd-redhat /usr/local/bin/httpd-shibd-foreground
