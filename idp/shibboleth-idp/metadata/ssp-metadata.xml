@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" entityID="http://idptestbed/sp/simplesamlphp">
+  <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIIC6zCCAdOgAwIBAgIJAOy0nki3WAOVMA0GCSqGSIb3DQEBBQUAMBcxFTATBgNVBAMTDDc5OTQzZmVlNzg2NTAeFw0xNTEyMTEwMzAwNDJaFw0yNTEyMDgwMzAwNDJaMBcxFTATBgNVBAMTDDc5OTQzZmVlNzg2NTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALPBzAz0DTn+j2YsQKfqWI+m08lP5UzwVsE9ZKzLqO3PRHZqiOBmEaFmRrYCZCAOcJ0TXcxPGtNSo8HC4uw5/Y5lJGuI3jN7X7KB1VUQDpUSwfgOqtrouDoVRKrsaYZTnlNV8KbZ0WQz5s4Uw6CxKRB9RZ5iQMP1fuxc8B6GSOb3x69MiY6c1jlgVAc6rV4zGfpafacxOLM8qcYhY8u3TiSd0H+oiGEqi1mFLK8yp6FKzX8OUkQfWe49YHz6wBxFOe+/p+7ziym1rBs/lGfenEo8ziCIMmjnoo257fz00bcz9rFl1rTxKLFfgy72xTlG72l6u+pB9VqK3YNJS52Ns5UCAwEAAaM6MDgwFwYDVR0RBBAwDoIMNzk5NDNmZWU3ODY1MB0GA1UdDgQWBBRiDMNPjiAMC50WWubI3PMjP45S/DANBgkqhkiG9w0BAQUFAAOCAQEAYZM/iWgC93vAq0d98egEzvESKodxHffkDOagd4Kxt/S0AAHsVQCmAK/9kmRhsWzR3f1KIw98q4EX7nH/K68BFrerUvaL5+fEGE9W6Ki6QdW8bM17GQkLyRDKZzGPm/hsaG1Oxru2kDf7qSvv59aRZlZ8skrDEnx8+dZ8JKC02ZDUClC+xWl1UPfO2BL4tJei/siSymGpiRqznQ2JMoTFu5CUUpoxyCVz1bl9lCVceoJ9FaL38knS0p5DnXcm+I8wqNEVGLDPbDalBQryhJT9fIMm1/B85gB3AWAvcu9PPfHKlQQUhxyEXTBJx3luLlpIjoloFKIute9K7pE5qAENjg==</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor use="encryption">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIIC6zCCAdOgAwIBAgIJAOy0nki3WAOVMA0GCSqGSIb3DQEBBQUAMBcxFTATBgNVBAMTDDc5OTQzZmVlNzg2NTAeFw0xNTEyMTEwMzAwNDJaFw0yNTEyMDgwMzAwNDJaMBcxFTATBgNVBAMTDDc5OTQzZmVlNzg2NTCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALPBzAz0DTn+j2YsQKfqWI+m08lP5UzwVsE9ZKzLqO3PRHZqiOBmEaFmRrYCZCAOcJ0TXcxPGtNSo8HC4uw5/Y5lJGuI3jN7X7KB1VUQDpUSwfgOqtrouDoVRKrsaYZTnlNV8KbZ0WQz5s4Uw6CxKRB9RZ5iQMP1fuxc8B6GSOb3x69MiY6c1jlgVAc6rV4zGfpafacxOLM8qcYhY8u3TiSd0H+oiGEqi1mFLK8yp6FKzX8OUkQfWe49YHz6wBxFOe+/p+7ziym1rBs/lGfenEo8ziCIMmjnoo257fz00bcz9rFl1rTxKLFfgy72xTlG72l6u+pB9VqK3YNJS52Ns5UCAwEAAaM6MDgwFwYDVR0RBBAwDoIMNzk5NDNmZWU3ODY1MB0GA1UdDgQWBBRiDMNPjiAMC50WWubI3PMjP45S/DANBgkqhkiG9w0BAQUFAAOCAQEAYZM/iWgC93vAq0d98egEzvESKodxHffkDOagd4Kxt/S0AAHsVQCmAK/9kmRhsWzR3f1KIw98q4EX7nH/K68BFrerUvaL5+fEGE9W6Ki6QdW8bM17GQkLyRDKZzGPm/hsaG1Oxru2kDf7qSvv59aRZlZ8skrDEnx8+dZ8JKC02ZDUClC+xWl1UPfO2BL4tJei/siSymGpiRqznQ2JMoTFu5CUUpoxyCVz1bl9lCVceoJ9FaL38knS0p5DnXcm+I8wqNEVGLDPbDalBQryhJT9fIMm1/B85gB3AWAvcu9PPfHKlQQUhxyEXTBJx3luLlpIjoloFKIute9K7pE5qAENjg==</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idptestbed/simplesaml/module.php/saml/sp/saml2-logout.php/default-sp"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idptestbed/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp" index="0"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:browser-post" Location="https://idptestbed/simplesaml/module.php/saml/sp/saml1-acs.php/default-sp" index="1"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" Location="https://idptestbed/simplesaml/module.php/saml/sp/saml2-acs.php/default-sp" index="2"/>
+    <md:AssertionConsumerService Binding="urn:oasis:names:tc:SAML:1.0:profiles:artifact-01" Location="https://idptestbed/simplesaml/module.php/saml/sp/saml1-acs.php/default-sp/artifact" index="3"/>
+  </md:SPSSODescriptor>
+  <md:ContactPerson contactType="technical">
+    <md:GivenName>Administrator</md:GivenName>
+    <md:EmailAddress>idp-admin@idptestbed</md:EmailAddress>
+  </md:ContactPerson>
+</md:EntityDescriptor>

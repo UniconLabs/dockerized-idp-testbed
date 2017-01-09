@@ -26,7 +26,7 @@
     <!-- ========================================================================================== -->
 
     <MetadataProvider id="TestSP"  xsi:type="FilesystemMetadataProvider" metadataFile="%{idp.home}/metadata/sp-metadata.xml"/>
-
+    <MetadataProvider id="TestSimpleSAMLphp"  xsi:type="FilesystemMetadataProvider" metadataFile="%{idp.home}/metadata/ssp-metadata.xml"/>
 
     <!-- Example HTTP metadata provider.  Use this if you want to download
          the metadata from a remote service.

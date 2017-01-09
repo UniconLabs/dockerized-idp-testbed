@@ -1,5 +1,7 @@
 # dockerized-idp-testbed
-Used to validate the dockerized shibboleth-idp image (<https://hub.docker.com/r/unicon/shibboleth-idp/>/<https://github.com/Unicon/shibboleth-idp-dockerized>).
+Used to validate the Unicon, dockerized shibboleth-idp (<https://hub.docker.com/r/unicon/shibboleth-idp/>/<https://github.com/Unicon/shibboleth-idp-dockerized>),
+ dockerized shibboleth-sp (<https://hub.docker.com/r/unicon/shibboleth-sp/>/<https://github.com/Unicon/shibboleth-sp-dockerized>) and
+simplesamlphp (<https://hub.docker.com/r/unicon/simplesamlphp/>/<https://github.com/Unicon/simplesamlphp-dockerized>) images.
 
 More documentation is forthcoming, but it's a full working IDP, SP, and LDAP server that runs under `docker-compose`. 
 
@@ -9,12 +11,15 @@ More documentation is forthcoming, but it's a full working IDP, SP, and LDAP ser
 1. `ctrl+c` then `docker-compose rm` cleans everything up to try again.
 
 ## Prepping for the Test
-If testing the IdP build process locally, you'll want to make sure to `docker pull centos:centos7` to ensure that you have the latest before building the IdP. This will ensure that your version will match what Docker Hub will use when it builds. 
+If testing the Shibboleth IdP build process locally, you'll want to make sure to `docker pull centos:centos7` to ensure that you have the latest before building the IdP. This will ensure that your version will match what Docker Hub will use when it builds. 
 
 Build the IdP with `docker build --tag="unicon/shibboleth-idp:<version>" .`. Make sure the `FROM` entry in testbed's `idp/Dockerfile` matches the tag used in the idp build  or Docker Compose will pull the wrong version when running the Testbed (see step #1).
 
+If testing the SimpleSAMLphp build process locally, you'll want to make sure to `docker pull centos:centos7` to ensure that you have the latest before building the image. This will ensure that your version will match what Docker Hub will use when it builds. 
 
-## HTTP/2 support
+Build the application with `docker build --tag="unicon/simplesamlphp:<version>" .`. Make sure the `FROM` entry in testbed's `simplesamlphp/Dockerfile` matches the tag used in the ssp build or Docker Compose will pull the wrong version when running the Testbed (see step #1).
+
+## HTTP/2 support for Shibboleth IdP
 HTTP/2 support can be added to Jetty by doing the following:
 
 1. Adding the following to the `idp-http2/Dockerfile`:

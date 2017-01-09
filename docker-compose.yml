@@ -35,6 +35,13 @@ services:
     networks:
      - back
 
+  simplesamlphp:
+    build: ./simplesamlphp/
+    links:
+      - httpd-proxy:idptestbed
+    networks:
+     - back
+
   php-cas:
     build: ./php-cas/
     links:
