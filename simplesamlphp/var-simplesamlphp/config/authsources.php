@@ -15,7 +15,7 @@ $config = array(
     // and Shibboleth 1.3 IdPs.
     'default-sp' => array(
         'saml:SP',
-        'privatekey' => 'server.pem',
+        'privatekey' => '/run/secrets/ssp_key',
         'certificate' => 'server.crt',
 
         // The entity ID of this SP.

@@ -1,4 +1,4 @@
-version: "2"
+version: "3.1"
 
 services:
   #This handles all of the http request to simple cert issues and both the SP and IdP can share the same ports.
@@ -23,9 +23,14 @@ services:
      - "4443"
     networks:
      - back
+    secrets:
+     - source: idp_backchannel
+     - source: idp_browser
+     - source: idp_encryption
+     - source: idp_signing
+     - source: idp_sealer     
     volumes:
       - /Users/jgasper/Downloads/jdk1.8.0_91:/opt/jre-home/:ro
-
    
   ldap:
     build: ./ldap/
@@ -36,6 +41,8 @@ services:
     build: ./sp/ 
     networks:
      - back
+  secrets:
+     - source: sp_key
 
   php-cas:
     build: ./php-cas/
@@ -49,3 +56,19 @@ networks:
     driver: bridge
   back:    
     driver: bridge
+
+secrets:
+  idp_backchannel:
+    file: ./secrets/idp/idp-backchannel.p12
+  idp_browser:
+    file: ./secrets/idp/idp-browser.p12
+  idp_encryption:
+    file: ./secrets/idp/idp-encryption.key
+  idp_signing:
+    file: ./secrets/idp/idp-signing.key
+  idp_sealer:
+    file: ./secrets/idp/sealer.jks
+  ssp_key:
+    file: ./secrets/simplesamlphp/server.pem
+  sp_key:
+    file: ./secrets/sp/sp-key.pem
