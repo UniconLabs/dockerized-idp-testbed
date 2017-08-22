@@ -35,7 +35,7 @@ RUN cd /opt/shib-jetty-base \
 ADD shib-jetty-base/alpn.ini /opt/shib-jetty-base/start.d/
 ```
 
-> This will automatically accept the GPLv2 license used by the APLN library utilized by Jetty.
+> This will automatically accept the GPLv2 license used by the ALPN library utilized by Jetty.
 
 2. Create and populate `idp-http2/shib-jetty-base/alpn.ini`:
 
