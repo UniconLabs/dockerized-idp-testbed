@@ -24,7 +24,9 @@ phpCAS::setDebug();
 
 // Initialize phpCAS
 phpCAS::client(CAS_VERSION_2_0, $cas_host, $cas_port, $cas_context);
-phpCAS::setExtraCurlOption( CURLOPT_SSLVERSION, 6 );
+
+// Let the default behavior of negotiating protocol happen
+// phpCAS::setExtraCurlOption( CURLOPT_SSLVERSION, 6 );
 
 // For production use set the CA certificate that is the issuer of the cert
 // on the CAS server and uncomment the line below
