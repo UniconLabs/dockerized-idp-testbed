@@ -1,9 +1,5 @@
 FROM unicon/simplesamlphp
 
-RUN yum -y update \
-    && yum -y install php55w-ldap \
-    && yum -y clean all
-
 COPY etc-httpd /etc/httpd/
 COPY var-simplesamlphp /var/simplesamlphp/
 COPY var-www-html/ /var/www/html/
