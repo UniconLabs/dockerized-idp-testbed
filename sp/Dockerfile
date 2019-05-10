@@ -6,3 +6,4 @@ RUN yum -y update \
 COPY etc-shibboleth /etc/shibboleth/
 COPY etc-httpd/ /etc/httpd/
 COPY var-www-html/ /var/www/html/
+RUN chmod +x /etc/shibboleth/shibd-redhat
