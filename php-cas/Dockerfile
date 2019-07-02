@@ -18,10 +18,10 @@ RUN yum -y update \
     && yum -y install httpd mod_ssl php php-pear php-xml php-pdo wget \
     && yum -y clean all
 
-COPY --from=stage /apereo/phpCAS/utils/dist/CAS-1.3.5.tgz /
+COPY --from=stage /apereo/phpCAS/utils/dist/CAS-1.3.4.tgz /
 
-RUN pear install CAS-1.3.5.tgz \
- && rm /CAS-1.3.5.tgz
+RUN pear install CAS-1.3.4.tgz \
+ && rm /CAS-1.3.4.tgz
 
 COPY httpd-foreground /usr/local/bin/
 COPY etc-httpd/ /etc/httpd/
