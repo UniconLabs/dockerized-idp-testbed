@@ -20,10 +20,6 @@
             <Rule xsi:type="Requester" value="http://idptestbed/sp/simplesamlphp" />
         </PolicyRequirementRule>
 
-        <AttributeRule attributeID="eduPersonPrincipalName">
-            <PermitValueRule xsi:type="ANY" />
-        </AttributeRule>
-
         <AttributeRule attributeID="uid">
             <PermitValueRule xsi:type="ANY" />
         </AttributeRule>
