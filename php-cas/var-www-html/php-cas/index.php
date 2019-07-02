@@ -55,10 +55,27 @@ if (isset($_REQUEST['logout'])) {
     <title>phpCAS simple client</title>
   </head>
   <body>
-    <h1>Successfull Authentication!</h1>
-    
+    <h1>Successful Authentication!</h1>
+
     <p>the user's login is <b><?php echo phpCAS::getUser(); ?></b>.</p>
     <p>phpCAS version is <b><?php echo phpCAS::getVersion(); ?></b>.</p>
     <p><a href="/">Main Menu</a></p>
+
+    <h3>User Attributes</h3>
+    <ul>
+    <?php
+    foreach (phpCAS::getAttributes() as $key => $value) {
+        if (is_array($value)) {
+            echo '<li>', $key, ':<ol>';
+            foreach ($value as $item) {
+                echo '<li><strong>', $item, '</strong></li>';
+            }
+            echo '</ol></li>';
+        } else {
+            echo '<li>', $key, ': <strong>', $value, '</strong></li>' . PHP_EOL;
+        }
+    }
+    ?>
+    </ul>
   </body>
 </html>
