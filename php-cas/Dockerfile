@@ -4,7 +4,7 @@ RUN yum -y update \
     && yum -y install ant doxygen git php-pear \
     && yum -y clean all
 
-RUN git clone --depth=1 --branch=1.3.6 https://github.com/apereo/phpCAS.git apereo/phpCAS \
+RUN git clone --depth=1 --branch=1.3-stable https://github.com/apereo/phpCAS.git apereo/phpCAS \
  && pear upgrade --force --alldeps \
  && cd apereo/phpCAS/utils \
  && pear install --onlyreqdeps PEAR_PackageFileManager2-beta \
